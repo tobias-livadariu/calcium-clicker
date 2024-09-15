@@ -7,3 +7,6 @@ __pycache__/
 
 # Ignore Flask session files
 flask_session
+
+# Ignore .env files
+.env

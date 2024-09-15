@@ -30,6 +30,8 @@ CREATE TABLE simple_upgrades (
 
 """Note that the libraries imported below were taken
 from the Finance pset."""
+import os
+from dotenv import load_dotenv
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, jsonify
 from flask_session import Session
@@ -60,6 +62,16 @@ always see the most up-to-date information.
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+
+# Changing the working directory
+# Load environment variables from the .env file
+load_dotenv()
+
+# Get the WORKING_DIR environment variable
+working_dir = os.getenv('WORKING_DIR')
+
+# Changing the working directory
+os.chdir(working_dir)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///calcium_clicker.db")

@@ -1,0 +1,9 @@
+# Ignore the virtual environment folder
+calcium-clicker-venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore Flask session files
+flask_session
